@@ -4,9 +4,9 @@ import { IState } from '../store';
 import { ICartItem } from '../store/modules/cart/types';
 
 const Cart: React.FC = () => {
-   
+
    const cart = useSelector<IState, ICartItem[]>(state => state.cart.items)
-   
+
    return (
       <div>
          <table>
@@ -19,7 +19,7 @@ const Cart: React.FC = () => {
                </tr>
             </thead>
             <tbody>
-               {cart.map(( item ) => (
+               {cart.map((item) => (
                   <tr key={item.product.id}>
                      <td>{item.product.title}</td>
                      <td>{item.product.price}</td>

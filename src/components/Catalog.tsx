@@ -6,20 +6,20 @@ import CatalogItem from './CatalogItem';
 
 const Catalog: React.FC = () => {
 
-   const [ catalog, setCatalog ] = useState<IProduct[]>([]);
+   const [catalog, setCatalog] = useState<IProduct[]>([]);
 
    useEffect(() => {
-      api.get('products').then( response => {
+      api.get('products').then(response => {
          setCatalog(response.data)
       })
-   },[]);
+   }, []);
 
 
 
    return (
       <main>
          <h1>Catalog</h1>
-         { catalog.map( product => (
+         { catalog.map(product => (
             <CatalogItem key={product.id} product={product} />
          ))}
       </main>
